@@ -77,6 +77,29 @@ fetchData.then((message) => {
 **6. Promise.race()**
 
 
+## Aync/await
+It makes asynchronous code look like synchronous code, which is easier to read.
+- async makes a function return a Promise
+
+- await pauses the code until the promise resolves
+
+```javascript
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+  console.log("Start");
+
+  await wait(2000);  // pauses here
+
+  console.log("2 seconds later...");
+}
+
+demo();
+```
+
+
 ## Event loop
 
 The event loop continuously checks whether the callstack is empty and if it is, it pushes pending callbacks (from queues) into the stack so they can run.
